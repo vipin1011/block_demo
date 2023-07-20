@@ -46,8 +46,8 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           TextButton(onPressed: () async {
                             final String url = 'https://fakestoreapi.com/products'; // Replace with your desired URL
-                            if (await canLaunch(url)) {
-                              await launch(url);
+                            if (await canLaunchUrl(Uri.parse(url))) {
+                              await launchUrl(Uri.parse(url));
                             } else {
                               throw 'Could not launch $url';
                             }
